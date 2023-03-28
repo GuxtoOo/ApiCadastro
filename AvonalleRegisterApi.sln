@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvonalleRegisterApi", "AvonalleRegisterApi\AvonalleRegisterApi.csproj", "{3E439DF3-C514-4934-A131-8DB3A8EC911A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvonalleRegisterApi.Domain", "AvonalleRegisterApi.Domain\AvonalleRegisterApi.Domain.csproj", "{00EA80D2-0B13-4244-9D1A-2879B295F180}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvonalleRegisterApi.Infrastructure", "AvonalleRegisterApi.Infrastructure\AvonalleRegisterApi.Infrastructure.csproj", "{C36ACB52-2BB2-4AE5-A7E0-41D602AD5297}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3E439DF3-C514-4934-A131-8DB3A8EC911A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E439DF3-C514-4934-A131-8DB3A8EC911A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E439DF3-C514-4934-A131-8DB3A8EC911A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00EA80D2-0B13-4244-9D1A-2879B295F180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00EA80D2-0B13-4244-9D1A-2879B295F180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00EA80D2-0B13-4244-9D1A-2879B295F180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00EA80D2-0B13-4244-9D1A-2879B295F180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36ACB52-2BB2-4AE5-A7E0-41D602AD5297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36ACB52-2BB2-4AE5-A7E0-41D602AD5297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36ACB52-2BB2-4AE5-A7E0-41D602AD5297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36ACB52-2BB2-4AE5-A7E0-41D602AD5297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
