@@ -1,10 +1,7 @@
-﻿using AutoMapper;
-using AvonalleRegisterApi.DTOs;
+﻿using AvonalleRegisterApi.DTOs;
 using AvonalleRegisterApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Data;
 
 namespace AvonalleRegisterApi.Controllers
 {
