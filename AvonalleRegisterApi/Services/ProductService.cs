@@ -29,7 +29,7 @@ namespace AvonalleRegisterApi.Services
         }
         public async Task<ProductDto> GetByIdAsync(int productId)
         {
-            if (productId.Equals(0) || productId == null)
+            if (productId.Equals(0))
                 throw new Exception("Informe um id.");
 
             var response = await _productRepository.GetByIdAsync(productId);
@@ -44,7 +44,7 @@ namespace AvonalleRegisterApi.Services
         }
         public async Task<CreateProductViewModel> UpdateAsync(CreateProductViewModel model, int productId)
         {
-            if (productId.Equals(0) || productId == null)
+            if (productId.Equals(0))
                 throw new Exception("Informe um id.");
             if (model == null)
                 throw new Exception("Informe uma model.");
@@ -61,7 +61,7 @@ namespace AvonalleRegisterApi.Services
         }
         public async Task<ProductDto> DeleteAsync(int productId)
         {
-            if (productId.Equals(0) || productId == null)
+            if (productId.Equals(0))
                 throw new Exception("Informe um id.");
 
             var produto = await GetByIdAsync(productId);
