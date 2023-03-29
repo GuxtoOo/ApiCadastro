@@ -3,6 +3,7 @@ using AvonalleRegisterApi.Domain.Models;
 using AvonalleRegisterApi.DTOs;
 using AvonalleRegisterApi.Infrastructure.Repositories;
 using AvonalleRegisterApi.Services.Interfaces;
+using AvonalleRegisterApi.ViewModel;
 
 namespace AvonalleRegisterApi.Services
 {
@@ -17,14 +18,14 @@ namespace AvonalleRegisterApi.Services
             _productRepository = productRepository;
         }
 
-        public async Task<ProductDto> PostAsync(ProductDto model)
+        public async Task<CreateProductViewModel> PostAsync(CreateProductViewModel model)
         {
             if (model == null)
                 throw new Exception("É preciso conter um produto.");
 
             var mappingModel = _mapper.Map<Product>(model);
             var response = await _productRepository.PostAsync(mappingModel);
-            return _mapper.Map<ProductDto>(response);
+            return _mapper.Map<CreateProductViewModel>(response);
         }
         public async Task<ProductDto> GetByIdAsync(int productId)
         {
@@ -41,7 +42,7 @@ namespace AvonalleRegisterApi.Services
                 throw new Exception("Nenhum produto foi encontrado.");
             return _mapper.Map<List<ProductDto>>(response);
         }
-        public async Task<ProductDto> UpdateAsync(ProductDto model, int productId)
+        public async Task<CreateProductViewModel> UpdateAsync(CreateProductViewModel model, int productId)
         {
             if (productId.Equals(0) || productId == null)
                 throw new Exception("Informe um id.");
@@ -56,7 +57,7 @@ namespace AvonalleRegisterApi.Services
 
             var mappingProduct = _mapper.Map<Product>(produto);
             await _productRepository.UpdateAsync(mappingProduct);
-            return produto;
+            return _mapper.Map<CreateProductViewModel>(mappingProduct);
         }
         public async Task<ProductDto> DeleteAsync(int productId)
         {

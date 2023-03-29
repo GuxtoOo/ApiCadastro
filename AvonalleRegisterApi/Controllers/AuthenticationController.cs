@@ -39,9 +39,9 @@ public class AuthenticationController : ControllerBase
             };
             return Ok(new ResultViewModel<dynamic>(result));
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            return StatusCode(500, new ResultViewModel<string>("Internal server error."));
+            return StatusCode(500, new ResultViewModel<string>($"Internal server error: {ex.Message}"));
         }
     }
 }
