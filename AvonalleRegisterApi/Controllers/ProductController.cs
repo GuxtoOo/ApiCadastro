@@ -1,5 +1,6 @@
 ﻿using AvonalleRegisterApi.DTOs;
 using AvonalleRegisterApi.Services.Interfaces;
+using AvonalleRegisterApi.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ public class ProductController : ControllerBase
 
     [Authorize]
     [HttpPost("v1/products")]
-    public async Task<IActionResult> PostAsync([FromBody] ProductDto model)
+    public async Task<IActionResult> PostAsync(CreateProductViewModel model)
     {
         try
         {
@@ -61,7 +62,7 @@ public class ProductController : ControllerBase
 
     [Authorize]
     [HttpPut("v1/products/{productId:int}")]
-    public async Task<IActionResult> UpdateAsync([FromBody]ProductDto model,int productId)
+    public async Task<IActionResult> UpdateAsync(CreateProductViewModel model,int productId)
     {
         try
         {
