@@ -41,7 +41,7 @@ public class AuthenticationController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new ResultViewModel<string>($"Internal server error: {ex.Message}"));
+            return StatusCode(500, new ResultViewModel<string>($"Erro interno: {ex.Message}"));
         }
     }
 }
