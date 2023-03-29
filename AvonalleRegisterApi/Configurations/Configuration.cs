@@ -1,5 +1,6 @@
 ﻿using AvonalleRegisterApi.Infrastructure.Data;
 using AvonalleRegisterApi.Infrastructure.Repositories;
+using AvonalleRegisterApi.Infrastructure.Repositories.Interfaces;
 using AvonalleRegisterApi.Services;
 using AvonalleRegisterApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -20,9 +21,13 @@ public static class Configuration
 
         // Repository
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
 
         // Services
         services.AddScoped<IProductService, ProductService>();
+        services.AddScoped<IUserService, UserService>();
+
+        services.AddScoped<TokenService>();
 
         return services;
     }
