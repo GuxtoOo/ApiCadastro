@@ -14,6 +14,7 @@ public static class Configuration
 {
     public static string JwtKey { get; set; } = "ZGIxMzVlZjktYTA0OC00Mzk4LWI3YmMtNmI3ZjUyMWRmYzg0";
 
+    //Injeção de Dependencias
     public static IServiceCollection AddDependencyInjectionConfig(this IServiceCollection services,
         IConfiguration configuration)
     {
@@ -32,6 +33,7 @@ public static class Configuration
         return services;
     }
 
+    //Conexão com o Banco de Dados
     public static IServiceCollection AddDbContextConfig(this IServiceCollection services,
         IConfiguration configuration)
     {
@@ -45,6 +47,7 @@ public static class Configuration
         return services;
     }
 
+    //Configuração do Token Jwt
     public static IServiceCollection AddJwtTokenConfig(this IServiceCollection services, IConfiguration configuration)
     {
         var key = Encoding.ASCII.GetBytes(JwtKey);
