@@ -23,7 +23,7 @@ public class User
         Password = HashPassword(Password, 10);
     }
 
-    //Valida a senha no login
+    //Valida a senha fornecida no login
     public bool ValidatePassword(string password)
     {
         var result = Verify(password, Password);
