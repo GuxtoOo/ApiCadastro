@@ -1,25 +1,36 @@
+using AvonalleRegisterApi.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddSwaggerGen();
+builder.Services.AddJwtTokenConfig(builder.Configuration);
+builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
+builder.Services.AddAutoMapperConfig();
+builder.Services.AddDbContextConfig(builder.Configuration);
+builder.Services.AddDependencyInjectionConfig(builder.Configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapRazorPages();
+app.UseCors(options => options
+    .WithOrigins("*")
+    .AllowAnyMethod()
+    .AllowAnyHeader());
+
+app.UseHttpsRedirection();
+
+app.MapControllers();
 
 app.Run();

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AvonalleRegisterApi.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AvonalleRegisterApi.Infrastructure.Data;
 public partial class AvonalleContext : DbContext
@@ -6,5 +7,5 @@ public partial class AvonalleContext : DbContext
     public AvonalleContext(DbContextOptions<AvonalleContext> options)
         : base(options) { }
 
-    public virtual DbSet<Produto> Produtos { get; set; } = null!;    
+    public virtual DbSet<Product> Produtos { get; set; } = null!;    
 }
