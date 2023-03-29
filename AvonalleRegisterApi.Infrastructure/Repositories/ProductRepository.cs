@@ -20,13 +20,13 @@ public class ProductRepository : IProductRepository
         return model;
     }
 
-    //public async Task<Product?> GetAllProductsAsync()
-    //{
-    //    var response = await _dataContext.Produtos
-    //        .OrderBy(s => s.Nome)
-    //        .ToListAsync();
-    //    return response;
-    //}
+    public async Task<List<Product>> GetAllProductsAsync()
+    {
+        var response = await _dataContext.Produtos
+            .OrderBy(s => s.Nome)
+            .ToListAsync();
+        return response;
+    }
 
     public async Task<Product?> GetByIdAsync(int productId)
     {
@@ -34,6 +34,18 @@ public class ProductRepository : IProductRepository
             .Where(s => s.Id == productId)
             .FirstOrDefaultAsync();
         return response;
+    }
+
+    public async Task UpdateAsync(Product model)
+    {
+        _dataContext.Produtos.Update(model);
+        await _dataContext.SaveChangesAsync();
+    }
+
+    public async Task DeleteAsync(Product model)
+    {
+        _dataContext.Produtos.Remove(model);
+        await _dataContext.SaveChangesAsync();
     }
 
 }
