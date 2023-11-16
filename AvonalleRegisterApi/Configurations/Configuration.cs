@@ -37,7 +37,7 @@ public static class Configuration
     public static IServiceCollection AddDbContextConfig(this IServiceCollection services,
         IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("AvonalleDBConnection");
+        var connectionString = configuration.GetConnectionString("DefaultConnection");
 
         services.AddDbContext<AvonalleContext>(options =>
         {
