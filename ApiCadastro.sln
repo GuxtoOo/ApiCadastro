@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCadastro", "AvonalleRegisterApi\ApiCadastro.csproj", "{3E439DF3-C514-4934-A131-8DB3A8EC911A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvonalleRegisterApi.Domain", "AvonalleRegisterApi.Domain\AvonalleRegisterApi.Domain.csproj", "{00EA80D2-0B13-4244-9D1A-2879B295F180}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegisterApi.Domain", "AvonalleRegisterApi.Domain\RegisterApi.Domain.csproj", "{00EA80D2-0B13-4244-9D1A-2879B295F180}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvonalleRegisterApi.Infrastructure", "AvonalleRegisterApi.Infrastructure\AvonalleRegisterApi.Infrastructure.csproj", "{C36ACB52-2BB2-4AE5-A7E0-41D602AD5297}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegisterApi.Infrastructure", "AvonalleRegisterApi.Infrastructure\RegisterApi.Infrastructure.csproj", "{C36ACB52-2BB2-4AE5-A7E0-41D602AD5297}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackEnd", "BackEnd", "{2687CF73-2181-4FCF-8EAC-6A2B9FEA4FBD}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{E2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCadastro.Web", "ApiCadastro.Web\ApiCadastro.Web.csproj", "{DE9BE2D6-FB7C-47F7-80AF-D5B5AE491EBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiAutenticacao", "ApiAutenticacao\ApiAutenticacao.csproj", "{672EE977-AD6C-48E3-B4BC-A3CB075330C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiAutenticacao", "ApiAutenticacao\ApiAutenticacao.csproj", "{672EE977-AD6C-48E3-B4BC-A3CB075330C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
