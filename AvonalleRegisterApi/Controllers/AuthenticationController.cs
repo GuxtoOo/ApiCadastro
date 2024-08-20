@@ -21,7 +21,22 @@ public class AuthenticationController : ControllerBase
         _tokenService = tokenService;
     }
 
-    [HttpPost("v1/login")]
+    [HttpPost("v1/loginUser")]
+    public async Task<IActionResult> Login([FromBody] UserDto model)
+    {
+        try
+        {
+            var error = await _userService.PostAsync(model);
+            return (IActionResult)error;
+        }
+        catch (Exception ex)
+        {
+
+            return StatusCode(500, new ResultViewModel<string>($"Erro interno: {ex.Message}"));
+        }
+    }
+
+    [HttpGet("v1/login")]
     public async Task<IActionResult> LoginAsync([FromBody] LoginDto model)
     {
         try
